@@ -1,9 +1,7 @@
 'use client'
-//import Link from "next/link";
+
 import { useEffect } from 'react'
 import { usePrivy } from "@privy-io/react-auth";
-//import CustomLink from "@/components/custom-link"
-//import SessionData from "@/components/session-data"
 import Footer from "@/components/footer"
 import Header from "@/components/header-login"
 import { useRouter } from "next/navigation";

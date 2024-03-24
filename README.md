@@ -34,13 +34,26 @@ This will give creators the power to create multiple lists using different input
 ## APIS and Frameworks
 
 ### Base Network
- -
+
+ - **allow creator deploy with no-code a nft contract on base network (create an nft contract)**
 
 ### Airstack.xyz
 
+- **Farcaster users who casted in a given channel**
+https://github.com/MosaicFun/fardrops/blob/22ba207f634c708fe45f475997794aadee48bff3/app/api/airstack/route.ts#L1
+
+- **Farcaster Users Who Participates In A Channel And Following The Host**
+https://github.com/MosaicFun/fardrops/blob/22ba207f634c708fe45f475997794aadee48bff3/app/api/airstack/
+
+- **Farcaster Followers of Farcaster User(s) that Hold ERC20 Token(s)**
+https://github.com/MosaicFun/fardrops/blob/22ba207f634c708fe45f475997794aadee48bff3/app/api/airstack/
+
+- **Farcaster Users that have a certain amount of Followers**
+https://github.com/MosaicFun/fardrops/blob/22ba207f634c708fe45f475997794aadee48bff3/app/api/airstack/
 
 ### Privy
 
+https://github.com/MosaicFun/fardrops/blob/22ba207f634c708fe45f475997794aadee48bff3/components/user-button.tsx#L17
 
 
 ## License
