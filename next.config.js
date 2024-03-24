@@ -4,9 +4,9 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 module.exports = {
-    compiler: {
+    /*compiler: {
       removeConsole: process.env.NODE_ENV === 'development' ? false : true
-    },
+    },*/
     env: {
       POSTGRES_URL: process.env.POSTGRES_URL,
       KV_URL: process.env.KV_URL,
