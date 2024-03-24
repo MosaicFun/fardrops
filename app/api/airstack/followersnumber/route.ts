@@ -35,7 +35,7 @@ dotenv.config();
               }
             }
           }`; 
-
+                         
           const { data, error } = await fetchQuery(query);
           
           console.log("data:", JSON.stringify(data?.FarcasterChannelParticipants?.FarcasterChannelParticipant));
