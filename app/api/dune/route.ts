@@ -1,27 +1,8 @@
 import { QueryParameter, DuneClient } from "@cowprotocol/ts-dune-client";
+import { toJSON } from "@/lib/query-utils"
 //import { auth } from "auth"
 import * as dotenv from "dotenv";
 dotenv.config();
-
-async function toJSON(body: any) {
-  const reader = body.getReader();
-  const decoder = new TextDecoder();
-  const chunks: any[] = [];
-
-  async function read() {
-    const { done, value } = await reader.read();
-
-    if (done) {
-      return JSON.parse(chunks.join(''));
-    }
-
-    const chunk = decoder.decode(value, { stream: true });
-    chunks.push(chunk);
-    return read();
-  }
-
-  return read();
-}
 
 //export const POST = auth( async (req) => {
   export const POST = async (req: any) => {

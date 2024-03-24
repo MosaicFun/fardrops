@@ -1,4 +1,5 @@
 import { init, fetchQuery } from "@airstack/node";
+import { toJSON } from "@/lib/query-utils"
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -11,37 +12,41 @@ dotenv.config();
           const errorResponse = 'No query info provided';
           return Response.json({ message: errorResponse }, { status: 500 })
         }
-      
-        const body = req.body;
-      
-        console.log('body ', body)
-      
-        const query = `query FcChannelParticipants {
-  FarcasterChannelParticipants(
-    input: {
-      filter: {
-        channelActions: {_eq: cast}, # Filter only for those who casted
-        channelId: {_eq: "warpcast"}, # Search in /warpcast channel
-      },
-      blockchain: ALL
-    }
-  ) {
-    FarcasterChannelParticipant {
-      participant {
-        userAddress
-        profileName
-        fid: userId
-      }
-    }
-  }
-}`; 
-// Replace with GraphQL Query
-        
-        const { data, error } = await fetchQuery(query);
-        
-        console.log("data:", data);
-        //console.log("error:", error);
-        return data;
+
+        const body = await toJSON(req.body);
+        console.log(body)
+        try {
+          const query = `query FcChannelParticipants {
+            FarcasterChannelParticipants(
+              input: {
+                filter: {
+                  channelActions: {_eq: cast}, # Filter only for those who casted
+                  channelId: {_eq: "${body?.channel}"}, # Search in for some channel channel
+                },
+                blockchain: ALL
+              }
+            ) {
+              FarcasterChannelParticipant {
+                participant {
+                  userAddress
+                  profileName
+                  fid: userId
+                }
+              }
+            }
+          }`; 
+          // Replace with GraphQL Query
+                  
+                  const { data, error } = await fetchQuery(query);
+                  
+                  console.log("data:", JSON.stringify(data?.FarcasterChannelParticipants?.FarcasterChannelParticipant));
+                  //console.log("error:", error);
+                  return Response.json({ data: data?.FarcasterChannelParticipants?.FarcasterChannelParticipant })
+          
+
+                } catch (error: any) {
+                  return Response.json({ message: error }, { status: 500 })
+                }
 
       }
       //) as any // TODO: Fix `auth()` return type
