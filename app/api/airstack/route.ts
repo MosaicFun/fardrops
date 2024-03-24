@@ -16,12 +16,32 @@ dotenv.config();
       
         console.log('body ', body)
       
-        //const query = `YOUR_QUERY`; // Replace with GraphQL Query
+        const query = `query FcChannelParticipants {
+  FarcasterChannelParticipants(
+    input: {
+      filter: {
+        channelActions: {_eq: cast}, # Filter only for those who casted
+        channelId: {_eq: "warpcast"}, # Search in /warpcast channel
+      },
+      blockchain: ALL
+    }
+  ) {
+    FarcasterChannelParticipant {
+      participant {
+        userAddress
+        profileName
+        fid: userId
+      }
+    }
+  }
+}`; 
+// Replace with GraphQL Query
         
-        //const { data, error } = await fetchQuery(query);
+        const { data, error } = await fetchQuery(query);
         
-        //console.log("data:", data);
+        console.log("data:", data);
         //console.log("error:", error);
+        return data;
 
       }
       //) as any // TODO: Fix `auth()` return type

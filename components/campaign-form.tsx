@@ -54,15 +54,16 @@ return (
     <AllowlistTable campaignid={searchParams.get('id')} />
     </>
 )
-}
-
-if (searchParams.get('new') === 'true') {
+} else if (searchParams.get('new') === 'true') {
   return (
       <>
       <h3 className="font-bold text-emerald-700">New Campaign, type a name and save to continue...</h3>
       <CampaignTitle />
       </>
   )
-  }
+} else {
+  return <></>
+}
+
       
 }
