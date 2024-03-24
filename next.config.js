@@ -7,9 +7,9 @@ const cspHeader = `
     upgrade-insecure-requests;`
 
 module.exports = {
-    /*compiler: {
+    compiler: {
       removeConsole: process.env.NODE_ENV === 'development' ? false : true
-    },*/
+    },
     env: {
       POSTGRES_URL: process.env.POSTGRES_URL,
       DEBUG_HUB_HTTP_URL: "https://hub-api.neynar.com",

@@ -44,7 +44,7 @@ import {
     const url = currentURL("/");
     //const session = await auth()
     console.log('searchParams => ', searchParams)
-    const campaignId = searchParams?.id;
+    const campaignId = searchParams?.id ?? 1;
     const people: any = await kv.get(`${campaignId}_allowed_list`) ?? []
     const query_params: any = await kv.get(`${campaignId}_allowed_list_params`) ?? null
     const nft_artwork: any = await kv.get(`${campaignId}_nft_artwork`)
@@ -120,7 +120,7 @@ import {
   
         <div className="pt-16">
         <FrameContainer
-          pathname="/campaign"
+          pathname={`/campaign`}
           postUrl="/frames"
           state={state}
           previousFrame={previousFrame}
@@ -149,7 +149,7 @@ import {
   
         <div className="pt-16">
         <FrameContainer
-          pathname="/campaign"
+          pathname={`/campaign`}
           postUrl="/frames"
           state={state}
           previousFrame={previousFrame}
