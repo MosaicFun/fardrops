@@ -64,7 +64,7 @@
               <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                 <div className="flex items-center">
                   <div className="h-10 w-10 flex-shrink-0">
-                    <img className="h-10 w-10 rounded-full" src={campaign.cover_image} alt={`${campaign.name} cover`} />
+                    <img className="h-10 w-10 rounded-full" src={campaign.cover_image ?? '/fardrops-logo-big.png'} alt={`${campaign.name} cover`} />
                   </div>
                   <div className="ml-4">
                     <div className="font-medium text-gray-900">{campaign.name} <span className="text-gray-500">({campaign.name})</span></div>
