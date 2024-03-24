@@ -9,14 +9,14 @@ import {
     useFramesReducer,
   } from "frames.js/next/server"
   import Link from "next/link";
-  import { DEBUG_HUB_OPTIONS } from "@/lib/constants"
+  import { DEBUG_HUB_OPTIONS, DEFAULT_DEBUGGER_HUB_URL } from "@/lib/constants"
   import { extractUserFids } from "@/lib/utils"
   import { getTokenUrl } from "frames.js";
   import { zora } from "viem/chains";
   import { kv } from "@vercel/kv"
-  
-  import CustomLink from "@/components/custom-link"
-  import SessionData from "@/components/session-data"
+  import { currentURL } from "@/lib/frame-utils";
+  //import CustomLink from "@/components/custom-link"
+  //import SessionData from "@/components/session-data"
   //import { auth } from "auth"
   
   type State =
@@ -44,6 +44,7 @@ import {
     params,
     searchParams,
   }: NextServerPageProps) {
+    const url = currentURL("/");
     //const session = await auth()
     console.log('searchParams => ', searchParams)
     const campaignId = 1;
@@ -58,7 +59,7 @@ import {
     const previousFrame = getPreviousFrame<State>(searchParams)
   
     const frameMessage = await getFrameMessage(previousFrame.postBody, {
-      ...DEBUG_HUB_OPTIONS,
+        hubHttpUrl: DEFAULT_DEBUGGER_HUB_URL,
     })
   
     console.log("info: frameMessage is:", frameMessage)
