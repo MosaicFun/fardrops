@@ -97,6 +97,7 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
                     className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   >
                     <option value="zora">Zora Network</option>
+                    <option value="base">Base Network</option>
                     {/*<option>Mainfold</option>
                     <option>Other</option>*/}
                   </select>
