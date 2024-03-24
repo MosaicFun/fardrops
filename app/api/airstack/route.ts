@@ -35,18 +35,17 @@ dotenv.config();
               }
             }
           }`; 
-          // Replace with GraphQL Query
-                  
-                  const { data, error } = await fetchQuery(query);
-                  
-                  console.log("data:", JSON.stringify(data?.FarcasterChannelParticipants?.FarcasterChannelParticipant));
-                  //console.log("error:", error);
-                  return Response.json({ data: data?.FarcasterChannelParticipants?.FarcasterChannelParticipant })
+                         
+          const { data, error } = await fetchQuery(query);
           
+          console.log("data:", JSON.stringify(data?.FarcasterChannelParticipants?.FarcasterChannelParticipant));
+          //console.log("error:", error);
+          return Response.json({ data: data?.FarcasterChannelParticipants?.FarcasterChannelParticipant })
+  
 
-                } catch (error: any) {
-                  return Response.json({ message: error }, { status: 500 })
-                }
+        } catch (error: any) {
+          return Response.json({ message: error }, { status: 500 })
+        }
 
       }
       //) as any // TODO: Fix `auth()` return type

@@ -31,6 +31,18 @@ This will give creators the power to create multiple lists using different input
 
    </p>
 
+## APIS and Frameworks
+
+### Base Network
+ -
+
+### Airstack.xyz
+
+
+### Privy
+
+
+
 ## License
 
 MIT
