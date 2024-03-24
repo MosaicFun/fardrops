@@ -12,7 +12,7 @@ import {
   import { DEFAULT_DEBUGGER_HUB_URL } from "@/lib/constants"
   import { extractUserFids } from "@/lib/utils"
   import { getTokenUrl } from "frames.js";
-  import { zora } from "viem/chains";
+  import { zora, base } from "viem/chains";
   import { kv } from "@vercel/kv"
   import { currentURL } from "@/lib/frame-utils";
   //import CustomLink from "@/components/custom-link"
@@ -50,7 +50,7 @@ import {
     const nft_artwork: any = await kv.get(`${campaignId}_nft_artwork`)
     const nft_token_url: any = getTokenUrl({
       address: nft_artwork.contractaddress,
-      chain: zora,
+      chain: nft_artwork?.chain === 'zora' ? zora : base,
       tokenId: nft_artwork.tokenid,
     })
     const previousFrame = getPreviousFrame<State>(searchParams)
