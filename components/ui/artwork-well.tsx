@@ -3,13 +3,14 @@ import Link from "next/link"
 
 export default function ArtworkWell(props: any) {
   const nft_artwork: any = props?.nftinfo ?? null;
+  const campaign_id: any = props?.campaignid ?? null;
     return nft_artwork ? (
-        <div className="sm:gap-2">
+        <div className="sm:gap-2 pt-16">
           <h3 className="text-lg font-bold text-gray-900">NFT Reward</h3>
           <p>Create an NFT contract on Base using our no code builder. Have an image ready to upload to include
 with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px wide).</p>
           <div className="mt-5">
-            <div className="rounded-md bg-slate-100 px-6 py-5 sm:flex sm:items-start sm:justify-between">
+            <div className="rounded-md px-6 py-5 sm:flex sm:items-start sm:justify-between">
               <h4 className="sr-only">NFT Information</h4>
               <div className="sm:flex sm:items-start">
                 <Image
@@ -32,31 +33,31 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
                 <Link
-                  href="/manager/update-artwork"
-                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
+                  href={`/manager/update-artwork?id=${campaign_id}`}
+                  className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
                 >
-                  Update
+                  Update NFT Reward
                 </Link>
               </div>
             </div>
           </div>
       </div>
     ) : (
-      <div className="bg-slate-100 shadow-lg sm:rounded-lg">
+      <div className="shadow-lg sm:rounded-lg pt-16">
         <div className="px-4 py-5 sm:p-6">
           <h3 className="text-lg font-medium leading-6 text-gray-900">NFT Reward</h3>
           <div className="mt-5">
-            <div className="rounded-md bg-slate-100 px-6 py-5 sm:flex sm:items-start sm:justify-between">
+            <div className="rounded-md px-6 py-5 sm:flex sm:items-start sm:justify-between">
               <h4 className="sr-only">NFT Information</h4>
               <div className="sm:flex sm:items-start">
                 <h3>No NFT artwork defined</h3>
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
                 <Link
-                  href="/manager/update-artwork"
-                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
+                  href={`/manager/update-artwork?id=${campaign_id}`}
+                  className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
                 >
-                  Create
+                  Create NFT Reward
                 </Link>
               </div>
             </div>

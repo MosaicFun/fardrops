@@ -72,7 +72,7 @@ function DragAndDropUpload(props: any) {
   };
 
   return (
-    <div className="w-full bg-[#D9D9D9]">
+    <div className="w-full h-full bg-[#D9D9D9]">
       <div
         className={`${
           isOnDrag
@@ -84,7 +84,7 @@ function DragAndDropUpload(props: any) {
         onDrop={handleDrop}
       >
         <div className="space-y-6 text-center">
-          <div className="flex text-sm text-gray-600">
+          <div className="flex text-sm text-gray-600 items-center justify-center w-[400px] h-[200px]">
             <label
               htmlFor="media"
               className="relative cursor-pointer rounded-md font-medium text-gray-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-gray-500 focus-within:ring-offset-2 hover:text-gray-500"

@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup';
 import { useRouter } from "next/navigation"
 import { toast } from 'react-hot-toast'
+import { useSearchParams } from 'next/navigation';
 
 // validation schema
 const schema = yup.object().shape({
@@ -34,6 +35,7 @@ const schema = yup.object().shape({
 export default function ArtworkForm() {
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter()
+    const searchParams = useSearchParams();
 
     const {
         register,
@@ -45,14 +47,18 @@ export default function ArtworkForm() {
     });
 
     const submitForm: any = async (formData: any) => {
+      if (searchParams.get('id')) {
         setLoading(true)
-        await kv.set("nft_artwork", formData)
+        const campaignId = searchParams.get('id');
+        await kv.set(`${campaignId}_nft_artwork`, formData)
         toast.success("NFT information saved successfully!")
-        router.push('/manager');
+        //router.push('/manager');
+        router.back();
+      }
     }
 
     return (
-        <form onSubmit={handleSubmit(submitForm)} noValidate className="space-y-8 divide-y divide-gray-200">
+        <form onSubmit={handleSubmit(submitForm)} noValidate className="mt-12 space-y-8 divide-y divide-gray-200">
         <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div className="space-y-6 sm:space-y-5">
             <div>

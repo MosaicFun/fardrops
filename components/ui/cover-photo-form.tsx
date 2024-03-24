@@ -40,13 +40,6 @@ We recommend creating an image in 1:2 format (200px tall, 400 px wide) that incl
 and a short description about the NFT drop.</p>
                 <div>
 
-                <button
-              type="submit"
-              className="mb-3 mt-3 justify-end rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Upload
-            </button>
-
                 </div>
 
           </div>
@@ -57,8 +50,14 @@ and a short description about the NFT drop.</p>
           errors={errors}
           setValue={setValue}
         />
+        
               </div>
-
+              <button
+              type="submit"
+              className="mb-3 mt-3 justify-end rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Upload Cover Image
+            </button>
       </form>
     )
   }

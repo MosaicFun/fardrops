@@ -45,7 +45,7 @@ return (
     <>
     <CampaignTitle title={campaign?.data[0]?.name} />
     <CoverPhotoUpload campaignid={searchParams.get('id')} />
-    <NftInfo nftinfo={nft ?? null} />
+    <NftInfo nftinfo={nft ?? null} campaignid={searchParams.get('id')} />
     <AllowlistTable campaignid={searchParams.get('id')} />
     </>
 )
