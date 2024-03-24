@@ -34,6 +34,7 @@ const schema = yup.object().shape({
 
 export default function ArtworkForm() {
     const [loading, setLoading] = useState<boolean>(false);
+    const [chain, setChain] = useState<string>('zora');
     const router = useRouter()
     const searchParams = useSearchParams();
 
@@ -94,6 +95,7 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
                 <div className="mt-1 sm:col-span-2 sm:mt-0">
                   <select
                     {...register('chain', { required: true })}
+                    onChange={(e) => setChain(e.target.value)}
                     className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   >
                     <option value="zora">Zora Network</option>
@@ -111,7 +113,7 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
                 <div className="mt-1 sm:col-span-2 sm:mt-0">
                   <div className="flex max-w-lg rounded-md shadow-sm">
                     <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500 sm:text-sm">
-                    zora:
+                    {chain}:
                     </span>
                     <input
                       type="text"
