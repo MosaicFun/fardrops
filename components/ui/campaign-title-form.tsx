@@ -35,19 +35,19 @@ export default function CampaignNameForm(props: any) {
         setLoading(true)
         //await kv.set("nft_artwork", formData)
         toast.success("Campaign information saved successfully!")
-        router.push('/manager');
+        //router.push('/manager');
     }
 
     return (
         <form onSubmit={handleSubmit(submitForm)} noValidate className="space-y-3 divide-y divide-gray-200">
 
-            <div className="sm:grid sm:grid-cols-2 sm:items-start sm:gap-2 sm:border-t sm:border-gray-200 sm:pt-5">
+            <div className="w-full sm:items-start sm:gap-2 sm:border-t sm:border-gray-200 sm:pt-5">
                 <label htmlFor="campaign_name" className="block text-lg font-bold text-gray-700 sm:pt-2">
                 Campaign Name
                 </label>
-                <div className="sm:col-span-2 sm:mt-0">
+                <div className="w-full sm:mt-0">
 
-                <div className="inline-flex w-3/5">
+                <div className="inline-flex">
 
                   <input
                     type="text"
@@ -62,7 +62,7 @@ export default function CampaignNameForm(props: any) {
                     )}  
                     <div className="ml-6">
 
-<button
+            <button
               type="submit"
               className="justify-end rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
