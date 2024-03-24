@@ -44,7 +44,7 @@ import {
     const url = currentURL("/");
     //const session = await auth()
     console.log('searchParams => ', searchParams)
-    const campaignId = 1;
+    const campaignId = searchParams?.id;
     const people: any = await kv.get(`${campaignId}_allowed_list`) ?? []
     const query_params: any = await kv.get(`${campaignId}_allowed_list_params`) ?? null
     const nft_artwork: any = await kv.get(`${campaignId}_nft_artwork`)
