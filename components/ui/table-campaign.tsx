@@ -2,62 +2,6 @@
     const { campaigns, loading } = props
     console.log('loading', loading)
     console.log('campaigns', campaigns)
-    /*if (campaigns) {
-      return (
-
-        <table className="min-w-full divide-y divide-gray-300">
-        <thead className="bg-gray-50">
-          <tr>
-            <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-bold text-gray-900 sm:pl-6">
-              Campaign Name
-            </th>
-
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-gray-200 bg-white">
-        <tr>
-        <td colSpan={4} className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
-          {loading ? (
-            <div className="mx-auto items-center space-y-6 sm:px-6 lg:col-span-12 lg:px-0">
-            <div className="space-y-3 text-center">
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-50">
-                <svg
-                  className="text-navy-300 h-20 w-20 animate-spin"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx={12}
-                    cy={12}
-                    r={10}
-                    stroke="currentColor"
-                    strokeWidth={4}
-                  />
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  />
-                </svg>
-              </div>
-              <div className="mt-3 text-center sm:mt-5">
-                <h3 className="text-lg font-medium leading-6 text-gray-900">
-                  Querying, please wait...
-                </h3>
-              </div>
-            </div>
-            </div>
-          ) : (
-          <h3 className="text-gray-900 text-lg">No active campaigns</h3>
-          )}
-        </td>
-        </tr>
-        </tbody>
-        </table>
-      )
-    }*/
 
     return (
       <table className="min-w-full divide-y divide-gray-300">
