@@ -134,7 +134,7 @@ import {
             <p style={{fontSize: "50px"}}>You has at least {query_params.user_input_mincasts ? query_params.user_input_mincasts : 50} casts</p>
         </div>
       </FrameImage>
-      <FrameButton key="button">Check eligibility</FrameButton>
+      <FrameButton key="button" target={`/frames?id=${campaignId}`}>Check eligibility</FrameButton>
         </FrameContainer>
       </div>
 
