@@ -2,6 +2,9 @@
 
 const dotenv = require('dotenv')
 dotenv.config()
+const cspHeader = `
+    frame-ancestors 'self' https://auth.privy.io;
+    upgrade-insecure-requests;`
 
 module.exports = {
     /*compiler: {
@@ -20,6 +23,10 @@ module.exports = {
           source: '/(.*)',
           headers: [
             { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
+            {
+              key: 'Content-Security-Policy',
+              value: cspHeader.replace(/\n/g, ''),
+            },
           ]
         }
       ];
