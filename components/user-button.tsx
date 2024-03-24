@@ -16,7 +16,6 @@ export default function UserButton() {
   //const session = await auth()
   const { ready, user, logout, authenticated } = usePrivy();
   const router = useRouter();
-  console.log(user)
 
   useEffect(() => {
     if (ready && !authenticated) {

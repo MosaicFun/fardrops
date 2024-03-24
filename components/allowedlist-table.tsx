@@ -85,7 +85,6 @@ export default function AllowedListTable(props: any) {
     }
 
     const getData = async () => {
-      if (campaignId) {
       const existing_people: any = await kv.get(`${campaignId}_allowed_list`) ?? []
       if (existing_people?.length > 0) {
         setPeople({ data: existing_people })
@@ -100,7 +99,6 @@ export default function AllowedListTable(props: any) {
         setValue('mincasts', query_params?.user_input_mincasts, { shouldValidate: true })
       }
       setLoading(false)
-    }
     }
 
     useEffect(() => {
