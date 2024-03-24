@@ -9,12 +9,13 @@ import CoverPhotoUpload from "@/components/ui/cover-photo-form";
 import NftInfo from "@/components/ui/artwork-well";
 import AllowlistTable from "@/components/allowedlist-table";
 import { useSearchParams } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 export default function CampaignForm() {
     const [loading, setLoading] = useState<boolean>(true)
     const [campaign, setCampaign] = useState<any>()
     const [nft, setNft] = useState<any>()
-    //const router = useRouter();
+    const router = useRouter();
     const searchParams = useSearchParams();
 
     const getData = async (user_id: string|null, campaign_id: string|null) => {
@@ -32,15 +33,19 @@ export default function CampaignForm() {
         }
       }
 
+      if (!searchParams.get('id') || searchParams.get('new')) {
+          router.push('/campaigns')
+      }
+
 
       useEffect(() => {
         setLoading(true)
         if (searchParams && searchParams.get('id')) {
             getData(searchParams.get('user_id'), searchParams.get('id'))
         }
-        
       }, []);
       console.log(campaign)
+if (searchParams.get('id')) {
 return (
     <>
     <CampaignTitle title={campaign?.data[0]?.name} />
@@ -49,5 +54,15 @@ return (
     <AllowlistTable campaignid={searchParams.get('id')} />
     </>
 )
+}
+
+if (searchParams.get('new') === 'true') {
+  return (
+      <>
+      <h3 className="font-bold text-emerald-700">New Campaign, type a name and save to continue...</h3>
+      <CampaignTitle />
+      </>
+  )
+  }
       
 }
