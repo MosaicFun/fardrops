@@ -2,8 +2,6 @@ import Link from "next/link"
 
 export default function TableWithCampaign(props: any) {
     const { campaigns, loading } = props
-    console.log('loading', loading)
-    console.log('campaigns', campaigns)
 
     return (
       <table className="min-w-full divide-y divide-gray-300">
@@ -79,7 +77,7 @@ export default function TableWithCampaign(props: any) {
               </td>
               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
               <Link
-              href={`/manager?id=${campaign.campaign_id}`}
+              href={`/manager?user_id=${campaign.user_id}&id=${campaign.campaign_id}`}
               className="inline-flex items-right justify-end rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
             >
               Update

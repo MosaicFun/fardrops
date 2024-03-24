@@ -1,9 +1,8 @@
-import { kv } from "@vercel/kv"
 import Image from "next/image"
 import Link from "next/link"
 
-export default async function ArtworkWell() {
-  const nft_artwork: any = await kv.get("nft_artwork");
+export default function ArtworkWell(props: any) {
+  const nft_artwork: any = props?.nftinfo ?? null;
     return nft_artwork ? (
         <div className="sm:gap-2">
           <h3 className="text-lg font-bold text-gray-900">NFT Reward</h3>

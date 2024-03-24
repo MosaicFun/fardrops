@@ -17,7 +17,7 @@ const schema = yup.object().shape({
     .required('Please enter a campaign name'),
   });
 
-export default function CampaignNameForm() {
+export default function CampaignNameForm(props: any) {
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter()
 

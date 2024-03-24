@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 import { toast } from 'react-hot-toast'
 
 
-export default function CoverPhotoForm() {
+export default function CoverPhotoForm(props: any) {
   const [previewImage, setPreviewImage] = useState<any>();
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter()

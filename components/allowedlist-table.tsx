@@ -26,7 +26,7 @@ const schema = yup.object().shape({
   .required('Please enter a minimal casts number')
 });
 
-export default function AllowedListTable() {
+export default function AllowedListTable(props: any) {
     const [loading, setLoading] = useState<boolean>(true)
     const [queryParams, setQueryParams] = useState<any>()
     const [people, setPeople] = useState<any>()

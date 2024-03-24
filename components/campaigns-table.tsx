@@ -10,7 +10,6 @@ import TableWithCampaigns from "@/components/ui/table-campaign"
 import { useUpdateEffect } from "usehooks-ts";
 import { useRouter } from "next/navigation";
 
-
 export default function CampaignsTable() {
     const [loading, setLoading] = useState<boolean>(true)
     const [queryParams, setQueryParams] = useState<any>()
