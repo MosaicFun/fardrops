@@ -16,22 +16,19 @@ dotenv.config();
         const body = await toJSON(req.body) ?? {};
 
         try {
-          const query = `query FcChannelParticipants {
-            FarcasterChannelParticipants(
+          const query = `query MyQuery {
+            Socials(
               input: {
-                filter: {
-                  channelActions: {_eq: cast}, # Filter only for those who casted
-                  channelId: {_eq: "${body?.channel}"}, # Search in for some channel channel
-                },
-                blockchain: ALL
+                filter: { followerCount: { _gte: ${body?.minfollowers} }, dappName: { _eq: farcaster } }
+                blockchain: ethereum
+                limit: 200
               }
             ) {
-              FarcasterChannelParticipant {
-                participant {
-                  userAddress
-                  profileName
-                  fid: userId
-                }
+              Social {
+                profileName
+                userId
+                userAssociatedAddresses
+                followerCount
               }
             }
           }`; 

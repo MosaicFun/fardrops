@@ -17,21 +17,11 @@ dotenv.config();
 
         try {
           const query = `query MyQuery {
-            FarcasterChannelParticipants(
-              input: {
-                filter: {
-                  channelActions: {_eq: cast}, # Filter only for those who casted
-                  channelId: {_eq: "${body?.channel}"}, # Search in for some channel channel
-                },
-                blockchain: ALL
-              }
+            FarcasterChannels(
+              input: { blockchain: ALL, filter: { channelId: { _eq: "${body?.channel}" } } }
             ) {
-              FarcasterChannelParticipant {
-                participant {
-                  userAddress
-                  profileName
-                  fid: userId
-                }
+              FarcasterChannel {
+                leadIds
               }
             }
           }`; 

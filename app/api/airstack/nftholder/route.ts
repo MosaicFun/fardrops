@@ -22,7 +22,7 @@ dotenv.config();
                 filter: {
                   identity: {
                     _in: [
-                      "humpty.eth"
+                      "${body?.identity}"
                     ]
                   }
                   dappName: { _eq: farcaster }
