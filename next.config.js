@@ -12,6 +12,7 @@ module.exports = {
     },*/
     env: {
       POSTGRES_URL: process.env.POSTGRES_URL,
+      DEBUG_HUB_HTTP_URL: "https://hub-api.neynar.com",
       KV_URL: process.env.KV_URL,
       KV_REST_API_URL: process.env.KV_REST_API_URL,
       KV_REST_API_TOKEN: process.env.KV_REST_API_TOKEN,
