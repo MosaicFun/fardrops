@@ -124,7 +124,117 @@ export default function AllowedListTable() {
           </div>):null}
         </div>
 
-        {!loading ? (<div className="grid grid-cols-6 gap-3 mt-6">
+        {!loading ? (
+          <div className="w-full grid sm:grid-cols-2">
+        <div className="grid grid-cols-6 gap-3 mt-6">
+        <div className="col-span-3 sm:col-span-3 lg:col-span-6">
+        <fieldset className="space-y-5">
+      <legend className="sr-only">Notifications</legend>
+
+      <div className="relative flex items-start">
+        <div className="flex h-5 items-center">
+          <input
+            id="comments"
+            aria-describedby="comments-description"
+            name="comments"
+            type="checkbox"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+        </div>
+        <div className="ml-3 text-sm">
+          <label htmlFor="comments" className="font-medium text-gray-700">
+          follows my channel
+          </label>
+          <p id="comments-description" className="text-gray-500">
+            Get notified when someones posts a comment on a posting.
+          </p>
+        </div>
+      </div>
+      
+      <div className="relative flex items-start">
+        <div className="flex h-5 items-center">
+          <input
+            id="candidates"
+            aria-describedby="candidates-description"
+            name="candidates"
+            type="checkbox"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+        </div>
+        <div className="ml-3 text-sm">
+          <label htmlFor="candidates" className="font-medium text-gray-700">
+          min casts in channel
+          </label>
+          <p id="candidates-description" className="text-gray-500">
+            Get notified when a candidate applies for a job.
+          </p>
+        </div>
+      </div>
+      <div className="relative flex items-start">
+        <div className="flex h-5 items-center">
+          <input
+            id="offers"
+            aria-describedby="offers-description"
+            name="offers"
+            type="checkbox"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+        </div>
+        <div className="ml-3 text-sm">
+          <label htmlFor="offers" className="font-medium text-gray-700">
+          follows me
+          </label>
+          <p id="offers-description" className="text-gray-500">
+            Get notified when a candidate accepts or rejects an offer.
+          </p>
+        </div>
+      </div>
+
+      <div className="relative flex items-start">
+        <div className="flex h-5 items-center">
+          <input
+            id="candidates"
+            aria-describedby="candidates-description"
+            name="candidates"
+            type="checkbox"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+        </div>
+        <div className="ml-3 text-sm">
+          <label htmlFor="candidates" className="font-medium text-gray-700">
+          holds my nft
+          </label>
+          <p id="candidates-description" className="text-gray-500">
+            Get notified when a candidate applies for a job.
+          </p>
+        </div>
+      </div>
+
+
+      <div className="relative flex items-start">
+        <div className="flex h-5 items-center">
+          <input
+            id="candidates"
+            aria-describedby="candidates-description"
+            name="candidates"
+            type="checkbox"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+        </div>
+        <div className="ml-3 text-sm">
+          <label htmlFor="candidates" className="font-medium text-gray-700">
+          max fid
+          </label>
+          <p id="candidates-description" className="text-gray-500">
+            Get notified when a candidate applies for a job.
+          </p>
+        </div>
+      </div>
+
+    </fieldset>
+          </div>
+        </div>
+        <div className="grid grid-cols-6 gap-3 mt-6">
           <div className="col-span-3 sm:col-span-3 lg:col-span-3">
             <label htmlFor="channel" className="block text-sm font-medium text-gray-700">
             Farcaster Channel URL
@@ -198,7 +308,9 @@ export default function AllowedListTable() {
               </p>
           )}
           </div>
-        </div>):null}
+        </div>
+        </div>
+        ):null}
 
         </form>
 

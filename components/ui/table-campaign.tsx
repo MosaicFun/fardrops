@@ -1,4 +1,6 @@
-  export default function TableWithCampaign(props: any) {
+import Link from "next/link"
+
+export default function TableWithCampaign(props: any) {
     const { campaigns, loading } = props
     console.log('loading', loading)
     console.log('campaigns', campaigns)
@@ -76,12 +78,12 @@
                 <div className="text-gray-900 text-center">{campaign.published_at ?? 'Not published'}</div>
               </td>
               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-              <button
-              type="button"
+              <Link
+              href={`/manager?id=${campaign.campaign_id}`}
               className="inline-flex items-right justify-end rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
             >
               Update
-            </button>
+            </Link>
             </td>
             </tr>
           )) : (
