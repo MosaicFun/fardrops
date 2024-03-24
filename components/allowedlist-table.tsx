@@ -30,8 +30,11 @@ export default function AllowedListTable(props: any) {
     const [loading, setLoading] = useState<boolean>(true)
     const [queryParams, setQueryParams] = useState<any>()
     const [people, setPeople] = useState<any>()
+    //const [campaignId, setCampaignId] = useState<any>()
     const { ready, user, authenticated } = usePrivy();
     const router = useRouter();
+    const campaignId = props?.campaignid;
+    console.log('campaignId ', campaignId)
 
     const {
         register,
@@ -62,27 +65,34 @@ export default function AllowedListTable(props: any) {
         }),
       })
       const people = await res.json()
-      
+      if (campaignId) {
       setPeople(people)
-      await kv.set("allowed_list_params", { 
+      await kv.set(`${campaignId}_allowed_list_params`, { 
         user_input_channel: formData?.channel,  
         user_input_fname: formData?.fname,
         user_input_maxfid: formData?.maxfid,
         user_input_mincasts: formData?.mincasts
       })
       if (people.data.length > 0) {
-        await kv.set("allowed_list", people.data)
+        try {
+          await kv.set(`${campaignId}_allowed_list`, people.data)
+        } catch (error) {
+          setLoading(false)
+        }
       }
       setLoading(false)
     }
+    }
 
     const getData = async () => {
-      const existing_people: any = await kv.get("allowed_list") ?? []
+      if (campaignId) {
+      const existing_people: any = await kv.get(`${campaignId}_allowed_list`) ?? []
       if (existing_people?.length > 0) {
         setPeople({ data: existing_people })
       }
-      const query_params: any = await kv.get("allowed_list_params") ?? null
+      const query_params: any = await kv.get(`${campaignId}_allowed_list_params`) ?? null
       if (query_params !== null) {
+        console.log(`${campaignId}_allowed_list_params`)
         setQueryParams(query_params)
         setValue('channel', query_params?.user_input_channel, { shouldValidate: true })
         setValue('fname', query_params?.user_input_fname, { shouldValidate: true })
@@ -90,6 +100,7 @@ export default function AllowedListTable(props: any) {
         setValue('mincasts', query_params?.user_input_mincasts, { shouldValidate: true })
       }
       setLoading(false)
+    }
     }
 
     useEffect(() => {
@@ -128,7 +139,7 @@ export default function AllowedListTable(props: any) {
           <div className="w-full grid sm:grid-cols-2">
         <div className="grid grid-cols-6 gap-3 mt-6">
         <div className="col-span-3 sm:col-span-3 lg:col-span-6">
-        <fieldset className="space-y-5">
+    <fieldset className="space-y-5">
       <legend className="sr-only">Notifications</legend>
 
       <div className="relative flex items-start">
@@ -242,7 +253,7 @@ export default function AllowedListTable(props: any) {
             <input
               type="text"
               {...register('channel', { required: true })}
-              defaultValue={"https://warpcast.com/~/channel/loyalty"}
+
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             />
           </div>
@@ -254,7 +265,7 @@ export default function AllowedListTable(props: any) {
             <input
               type="text"
               {...register('fname', { required: true })}
-              defaultValue={"humpty.eth"}
+
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             />
           </div>
@@ -266,7 +277,7 @@ export default function AllowedListTable(props: any) {
             <input
               type="number"
               {...register('maxfid', { required: true })}
-              defaultValue={200000}
+
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             />
           </div>
@@ -278,7 +289,7 @@ export default function AllowedListTable(props: any) {
             <input
               type="number"
               {...register('mincasts', { required: true })}
-              defaultValue={50}
+
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             />
           </div>

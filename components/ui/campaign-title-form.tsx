@@ -19,6 +19,7 @@ const schema = yup.object().shape({
 
 export default function CampaignNameForm(props: any) {
     const [loading, setLoading] = useState<boolean>(false);
+    const campaignName = props?.title;
     const router = useRouter()
 
     const {
@@ -51,6 +52,7 @@ export default function CampaignNameForm(props: any) {
                   <input
                     type="text"
                     {...register('campaign_name', { required: true })}
+                    defaultValue={campaignName}
                     className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                     {errors.campaign_name && (

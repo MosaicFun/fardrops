@@ -26,7 +26,7 @@ export default function CampaignForm() {
             setCampaign({ data: rows })
             setLoading(false)
         }
-        const nft_info = await kv.get("nft_artwork")
+        const nft_info = await kv.get(`${campaign_id}_nft_artwork`)
         if ( nft_info) {
             setNft(nft_info)
         }
@@ -43,10 +43,10 @@ export default function CampaignForm() {
       console.log(campaign)
 return (
     <>
-    <CampaignTitle campaignid={1} />
-    <CoverPhotoUpload campaignid={1} />
+    <CampaignTitle title={campaign?.data[0]?.name} />
+    <CoverPhotoUpload campaignid={searchParams.get('id')} />
     <NftInfo nftinfo={nft ?? null} />
-    <AllowlistTable campaignid={1} />
+    <AllowlistTable campaignid={searchParams.get('id')} />
     </>
 )
       

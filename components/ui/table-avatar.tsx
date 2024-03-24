@@ -57,7 +57,7 @@
             </div>
             </div>
           ) : (
-          <h3 className="text-gray-900 text-lg">Allowed list empty</h3>
+          <h3 className="text-gray-900 text-lg">Eligible users list empty</h3>
           )}
         </td>
         </tr>
