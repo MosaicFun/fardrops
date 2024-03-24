@@ -16,7 +16,7 @@ dotenv.config();
         const body = await toJSON(req.body) ?? {};
 
         try {
-          const query = `query FcChannelParticipants {
+          const query = `query MyQuery {
             FarcasterChannelParticipants(
               input: {
                 filter: {
