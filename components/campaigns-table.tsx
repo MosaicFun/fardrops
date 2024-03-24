@@ -48,7 +48,7 @@ export default function CampaignsTable() {
           <div className="sm:flex-auto">
             <h1 className="text-xl font-semibold text-gray-900">Campaigns</h1>
             <p className="mt-2 text-sm text-gray-700">
-              A list of all campaigns.
+              A list of all campaigns. ID: {user?.id}
             </p>
           </div>
           {!loading ? (<div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
