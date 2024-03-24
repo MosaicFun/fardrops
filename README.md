@@ -35,7 +35,7 @@ This will give creators the power to create multiple lists using different input
 
 ### Base Network
 
- - **allow creator deploy with no-code a nft contract on base network (create an nft contract)**
+ - **allow creators to deploy with no-code a nft contract on base network (create an nft contract)**
 
 ### Airstack.xyz
 

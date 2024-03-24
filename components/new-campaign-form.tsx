@@ -11,7 +11,7 @@ import AllowlistTable from "@/components/allowedlist-table";
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from "next/navigation";
 
-export default function CampaignForm() {
+export default function NewCampaignForm() {
     const [loading, setLoading] = useState<boolean>(true)
     const [campaign, setCampaign] = useState<any>()
     const [nft, setNft] = useState<any>()
@@ -33,11 +33,6 @@ export default function CampaignForm() {
         }
       }
 
-      if (!searchParams.get('id')) {
-          router.push('/campaigns')
-      }
-
-
       useEffect(() => {
         setLoading(true)
         if (searchParams && searchParams.get('id')) {
@@ -46,18 +41,11 @@ export default function CampaignForm() {
       }, []);
    
 
-if (searchParams.get('id')) {
-return (
-    <>
-    <CampaignTitle title={campaign?.data[0]?.name} />
-    <CoverPhotoUpload campaignid={searchParams.get('id')} />
-    <NftInfo nftinfo={nft ?? null} campaignid={searchParams.get('id')} />
-    <AllowlistTable campaignid={searchParams.get('id')} />
-    </>
-)
-} else {
-  return <div>Campaign not found</div>
-}
-
-      
+  return (
+      <>
+      <h3 className="font-bold text-emerald-700">New Campaign, type a name and save to continue...</h3>
+      <CampaignTitle />
+      </>
+  )
+ 
 }
