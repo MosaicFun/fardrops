@@ -1,13 +1,26 @@
+'use client'
 //import Link from "next/link";
-
+import { useEffect } from 'react'
+import { usePrivy } from "@privy-io/react-auth";
 //import CustomLink from "@/components/custom-link"
 //import SessionData from "@/components/session-data"
 import Footer from "@/components/footer"
 import Header from "@/components/header-login"
+import { useRouter } from "next/navigation";
 //import { auth } from "auth"
 
-export default async function Page() {
+export default function Page() {
   //const session = await auth()
+  const { ready, user, authenticated } = usePrivy();
+  const router = useRouter();
+
+  useEffect(() => {
+    //setLoading(true)
+    if (ready && authenticated) {
+      router.push("/campaigns");
+    }
+
+  }, [ready, user, authenticated]);
 
   return (
     <>
