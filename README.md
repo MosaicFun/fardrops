@@ -53,7 +53,7 @@ https://github.com/MosaicFun/fardrops/blob/3b9b2c48544ccf591b3bd4937f7058db8d379
 
 - **Farcaster Followers of Farcaster User(s) that Hold ERC721/1155 NFT(s)**
 
-https://github.com/MosaicFun/fardrops/blob/e0bfa628f5b79d742905e00cabc1fa2d2d0a570f/app/api/airstack/erc20holder/route.ts#L1
+https://github.com/MosaicFun/fardrops/blob/6996969f4d84369a6eef265a91e6475a76453cc8/app/api/airstack/nftholder/route.ts#L1
 
 - **Farcaster Users that have a certain amount of Followers**
 
