@@ -24,7 +24,7 @@ export default function CoverPhotoForm(props: any) {
         setLoading(true)
         //await kv.set("nft_artwork", formData)
         toast.success("Cover photo successfully uploaded!")
-        router.push('/manager');
+        //router.push('/builder');
     }
 
     return (

@@ -12,7 +12,7 @@ export default function PrivyProviderWrapper({
   return (
     <PrivyProvider
       appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || ""}
-      onSuccess={() => router.push("/manager")}
+      onSuccess={() => router.push("/builder/new-campaign")}
     >
       {children}
     </PrivyProvider>

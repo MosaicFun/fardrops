@@ -49,10 +49,10 @@ export function MainNav() {
   </NavigationMenuItem>*/}
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/manager"
+              href="/builder/new-campaign"
               className={navigationMenuTriggerStyle()}
             >
-              Manager
+              Builder
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>

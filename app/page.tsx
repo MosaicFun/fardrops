@@ -15,7 +15,7 @@ export default function Page() {
   useEffect(() => {
     //setLoading(true)
     if (ready && authenticated) {
-      router.push("/campaigns");
+      router.push("/builder/new-campaign");
     }
 
   }, [ready, user, authenticated]);

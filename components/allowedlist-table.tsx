@@ -138,7 +138,7 @@ export default function AllowedListTable(props: any) {
         <div className="grid grid-cols-6 gap-3 mt-6">
         <div className="col-span-3 sm:col-span-3 lg:col-span-6">
     <fieldset className="space-y-5">
-      <legend className="sr-only">Notifications</legend>
+      <legend className="sr-only">Playlist</legend>
 
       <div className="relative flex items-start">
         <div className="flex h-5 items-center">
@@ -152,10 +152,10 @@ export default function AllowedListTable(props: any) {
         </div>
         <div className="ml-3 text-sm">
           <label htmlFor="comments" className="font-medium text-gray-700">
-          follows my channel
+          Follows a channel
           </label>
           <p id="comments-description" className="text-gray-500">
-            Get notified when someones posts a comment on a posting.
+          Filter based on whether the user follows a particular channel.
           </p>
         </div>
       </div>
@@ -172,10 +172,10 @@ export default function AllowedListTable(props: any) {
         </div>
         <div className="ml-3 text-sm">
           <label htmlFor="candidates" className="font-medium text-gray-700">
-          min casts in channel
+          Min. casts in channel
           </label>
           <p id="candidates-description" className="text-gray-500">
-            Get notified when a candidate applies for a job.
+          Specify the minimum number of user casts in a channel.
           </p>
         </div>
       </div>
@@ -191,10 +191,10 @@ export default function AllowedListTable(props: any) {
         </div>
         <div className="ml-3 text-sm">
           <label htmlFor="offers" className="font-medium text-gray-700">
-          follows me
+          Follows an account
           </label>
           <p id="offers-description" className="text-gray-500">
-            Get notified when a candidate accepts or rejects an offer.
+          Filter users whom follows a particular account.
           </p>
         </div>
       </div>
@@ -211,10 +211,10 @@ export default function AllowedListTable(props: any) {
         </div>
         <div className="ml-3 text-sm">
           <label htmlFor="candidates" className="font-medium text-gray-700">
-          holds my nft
+          Holds an NFT
           </label>
           <p id="candidates-description" className="text-gray-500">
-            Get notified when a candidate applies for a job.
+            Filter users who hold a particular Non-Fungible Token (NFT)
           </p>
         </div>
       </div>
@@ -232,10 +232,10 @@ export default function AllowedListTable(props: any) {
         </div>
         <div className="ml-3 text-sm">
           <label htmlFor="candidates" className="font-medium text-gray-700">
-          max fid
+          Max. FID
           </label>
           <p id="candidates-description" className="text-gray-500">
-            Get notified when a candidate applies for a job.
+          Filter users by a maximum Farcaster ID (FID).
           </p>
         </div>
       </div>

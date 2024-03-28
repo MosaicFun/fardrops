@@ -35,7 +35,7 @@ export default function CampaignNameForm(props: any) {
         setLoading(true)
         //await kv.set("nft_artwork", formData)
         toast.success("Campaign information saved successfully!")
-        //router.push('/manager');
+        //router.push('/builder');
     }
 
     return (

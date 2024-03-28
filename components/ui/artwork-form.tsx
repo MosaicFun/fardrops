@@ -34,7 +34,7 @@ const schema = yup.object().shape({
 
 export default function ArtworkForm() {
     const [loading, setLoading] = useState<boolean>(false);
-    const [chain, setChain] = useState<string>('zora');
+    const [chain, setChain] = useState<string>('base');
     const router = useRouter()
     const searchParams = useSearchParams();
 
@@ -53,7 +53,7 @@ export default function ArtworkForm() {
         const campaignId = searchParams.get('id');
         await kv.set(`${campaignId}_nft_artwork`, formData)
         toast.success("NFT information saved successfully!")
-        //router.push('/manager');
+        //router.push('/builder');
         router.back();
       }
     }
@@ -98,8 +98,8 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
                     onChange={(e) => setChain(e.target.value)}
                     className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   >
-                    <option value="zora">Zora Network</option>
                     <option value="base">Base Network</option>
+                    <option value="zora">Zora Network</option>
                     {/*<option>Mainfold</option>
                     <option>Other</option>*/}
                   </select>

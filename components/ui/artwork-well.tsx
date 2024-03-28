@@ -33,7 +33,7 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
                 <Link
-                  href={`/manager/update-artwork?id=${campaign_id}`}
+                  href={`/builder/update-artwork?id=${campaign_id}`}
                   className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
                 >
                   Update NFT Reward
@@ -54,7 +54,7 @@ with your NFT. We recommend creating an image in 1:1 format (200px tall, 200 px 
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
                 <Link
-                  href={`/manager/update-artwork?id=${campaign_id}`}
+                  href={`/builder/update-artwork?id=${campaign_id}`}
                   className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
                 >
                   Create NFT Reward
